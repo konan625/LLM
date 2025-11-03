@@ -1,11 +1,17 @@
 import os
 
 from dotenv import load_dotenv
-from langchain_core.prompts import PromptTemplate
-from langchain_openai import ChatOpenAI
+from langchain import hub
+from langchain.agents import AgentExecutor
+from langchain.agents.raect.agents import create__react_agent
+from langchain_tavily import TavilySearch
+# from langchain_core.prompts import PromptTemplate
+# from langchain_openai import ChatOpenAI
 from langchain_ollama import ChatOllama
 
 load_dotenv()
+
+tools = [TavilySearch()]
 
 
 def main():
